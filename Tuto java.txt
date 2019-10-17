@@ -54,3 +54,18 @@ For objects :
 List<Object> listAnything = new ArrayList<Object>();
 
 
+DICTIONARY:
+------
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+// Declaration of the dictionary
+Dictionary<Integer, String> dico = new Hashtable<Integer, String>();
+// Initialization
+dico.put(1,"Passion");
+dico.put(2,"Motion");
+dico.put(3,"Caution");
+dico.put(4,"Eurobot");
+// Access to an element
+System.out.println(dico.get(4));
+
