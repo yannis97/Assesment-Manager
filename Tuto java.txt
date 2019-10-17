@@ -1,0 +1,45 @@
+- In the main toolbar, click on "New - Java project"
+
+/!\     In the Create Java Project dialog, don't choose Finish but Next,
+	and deselect Create module-info.java file. Otherwise an error like
+	"Must declare a named package blah blah blah" appears. 
+
+- Click on New - Class, enter a name and select the checkbox to create the 
+  main() method. 
+
+- To create a constant use the word "final" instead of "const" : final float pi=3.14;
+
+
+
+Console input and output:
+---------------
+string input =sc.nextLine();
+System.out.println("Hello");
+
+
+LIST : 
+------
+https://www.codejava.net/java-core/collections/java-list-collection-tutorial-and-examples#Overview
+
+import java.util.ArrayList;   // CTRL+SHIFT+o to import automatically
+import java.util.List;	
+	
+List<Integer> myList= new ArrayList<Integer>();
+myList.add(1);
+myList.add(2);
+myList.add(3);
+System.out.println(myList);
+
+OR : int[] myArray = new int[]{7,2,4};
+
+FOR loop in a list  :
+----------------------
+int[] myArray = new int[]{7,2,4};
+for (int number: myArray){
+	System.out.println(number);
+}
+
+For objects :
+List<Object> listAnything = new ArrayList<Object>();
+
+
