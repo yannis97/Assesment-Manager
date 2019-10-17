@@ -1,3 +1,5 @@
+Create project : 
+-----------------
 - In the main toolbar, click on "New - Java project"
 
 /!\     In the Create Java Project dialog, don't choose Finish but Next,
@@ -8,6 +10,15 @@
   main() method. 
 
 - To create a constant use the word "final" instead of "const" : final float pi=3.14;
+
+
+
+Open and work on a project in specific folder :
+-----------------------------------------------
+In eclipse : File -> switchWorkspace -> newFolderName
+	     File -> Import -> General -> Existing project into workspce-> select root dir
+
+
 
 
 
