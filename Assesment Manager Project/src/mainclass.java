@@ -13,13 +13,13 @@ public class mainclass {
 		System.out.println("Bonjour professeur !");
 		while (true)
 		{
-			// GET LIST OF COURS HERE
+			// GET LIST OF COURS_ID HERE
 			//ID du cours qui nous intéresse Ex : " id_python = 0 "
 			while(state == 0)
 			{
 				System.out.println("Sélectionnez le cours qui vous intéresse : (0 = Python | 1 = Java)");
 				cours = checkIntInput(sc);
-			  	if( cours != 0 ) //if cours is not in range of cours_id 
+			  	if( cours != 0 ) //if( cours is not in range of cours_id)
 			  	{
 					state = 0;
 					System.out.println("Erreur, veuillez entrez un cours valide !");
@@ -33,7 +33,7 @@ public class mainclass {
 			
 			while(state == 1)
 			{
-				System.out.println("Cours sélectionné : " + cours); // Chercher le string du cours
+				System.out.println("Cours sélectionné : " + cours); // Chercher le string du cours cours.getName
 				System.out.println("Que souhaitez vous faire ? (0 = Encoder points | 1 = Stats & Affichage | 9 = Retour)");
 				
 				options = checkIntInput(sc);
@@ -58,17 +58,17 @@ public class mainclass {
 					state = 1;
 				}
 				else if(options == 1){
-					state = statistics(cours,sc);
+					state = statistics_display(cours,sc);
 					// Stats et affichage // at the end -> histogramme or graph
 				}
 				else { state = 0;} //Retour au menu du cours
 			}            
 		}
 	}
-	private static void encoder(int cours , Scanner sc) 
+	public static int encoder(int cours , Scanner sc) 
 	{
 		int year;
-		String name;
+		String lastname;
 		String firstname;
 		int point;
 
@@ -76,16 +76,19 @@ public class mainclass {
 		System.out.println("Année académique :");
 		year = checkIntInput(sc);
 		System.out.println("Nom de l'étudiant :");
-		name = sc.nextLine();
+		lastname = sc.nextLine();
 		System.out.println("Prénom de l'étudiant :");
 		firstname = sc.nextLine();
 		System.out.println("Points obtenus : /20");
 		point = checkIntInput(sc);
-		// CREATE OBJECT STUDENT AND SET POINT HERE !
-		System.out.println("Points enregistrés avec succès !");
-		System.out.println("");
+		if (point > 20) {
+			point = 20;
+		}
+		// GET OBJECT STUDENT AND SET INFORMATIONS HERE !
+		System.out.println(firstname + " " + lastname + " - " + point + "/20 " + " - " + year + " - enregistré avec succès !");
+		return 0;
 	}
-	private static int statistics(int cours , Scanner sc)
+	public static int statistics_display(int cours , Scanner sc)
 	{
 		int option = 0;
 		int local_state = 2;
@@ -96,21 +99,18 @@ public class mainclass {
 		{
 			
 			System.out.println("*Graphe élève*");
-			System.out.println("");
 			local_state = 2;
 			return local_state;
 		}
 		else if (option == 1)
 		{
 			System.out.println("*Histogramme*");
-			System.out.println("");
 			local_state = 2;
 			return local_state;
 		}
 		else if (option == 2)
 		{
 			System.out.println("*Evolution Moyenne*");
-			System.out.println("");
 			local_state = 2;
 			return local_state;
 		}
@@ -126,7 +126,7 @@ public class mainclass {
 			return local_state;
 		}
 	}
-	private static int checkIntInput(Scanner sc){
+	public static int checkIntInput(Scanner sc){
 		int i = 0;
 		boolean validated = false;
 		while(!validated) {
