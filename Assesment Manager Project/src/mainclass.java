@@ -68,24 +68,21 @@ public class mainclass {
 	public static int encoder(int cours , Scanner sc) 
 	{
 		int year;
-		String lastname;
-		String firstname;
+		int matricule;
 		int point;
 
 		System.out.println("--- Cours ID : " + cours + "---"); // CHERCHE LE STRING DU COURS
 		System.out.println("Année académique :");
 		year = checkIntInput(sc);
-		System.out.println("Nom de l'étudiant :");
-		lastname = sc.nextLine();
-		System.out.println("Prénom de l'étudiant :");
-		firstname = sc.nextLine();
+		System.out.println("Matricule de l'étudiant :");
+		matricule = checkIntInput(sc);
 		System.out.println("Points obtenus : /20");
 		point = checkIntInput(sc);
 		if (point > 20) {
 			point = 20;
 		}
 		// GET OBJECT STUDENT AND SET INFORMATIONS HERE !
-		System.out.println(firstname + " " + lastname + " - " + point + "/20 " + " - " + year + " - enregistré avec succès !");
+		System.out.println( matricule + " - " + point + "/20 " + " - " + year + " - enregistré avec succès !");
 		return 0;
 	}
 	public static int statistics_display(int cours , Scanner sc)
