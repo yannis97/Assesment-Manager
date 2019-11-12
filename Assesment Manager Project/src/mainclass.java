@@ -161,6 +161,7 @@ public class mainclass {
 	public static int statistics_display(String courseCode , Scanner sc)
 	{
 		int option = 0;
+		int year = 0;
 		int local_state = 2;
 		System.out.println("--- Cours ID : " + courseCode + " ---"); // CHERCHE LE STRING DU COURS
 		System.out.println("Affichage (0 = Graphe élèves | 1 = Histogramme des points | 2 = Evolution moyenne par année | 9 = Retour)");
@@ -168,13 +169,13 @@ public class mainclass {
 		if(option == 0)
 		{
 			
-			System.out.println("*Graphe élève*");
+			System.out.println("Veuillez entrez l'année académique :");
 			local_state = 2;
 			return local_state;
 		}
 		else if (option == 1)
 		{
-			System.out.println("*Histogramme*");
+			System.out.println("Veuillez entrez l'année académique :");
 			local_state = 2;
 			return local_state;
 		}
