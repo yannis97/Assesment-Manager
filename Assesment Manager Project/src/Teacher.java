@@ -52,6 +52,7 @@ public class Teacher implements Serializable {
 		return (this.passwd==passwd);
 	}
 	
+	public int encodePoints(String courseCode,int year, int id, int points) {
 		Course thisCourse=coursesDico.get(courseCode);
 		if(thisCourse.hasStudent(id)){
 			thisCourse.addPoints(year,id,points);
