@@ -1,8 +1,22 @@
 import java.util.Scanner;
 import java.lang.*;
+
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 public class mainclass {
 
 	public static void main(String[] args) {
+		
+		// SAVE IN THE DATABASE
+
+		
 		
 		Teacher combe=new Teacher("Combefis", 115, "YOLO");
 		Course pythonCourse=new Course("Python","py",5);
@@ -30,6 +44,35 @@ public class mainclass {
 		
 		
 		
+		// IN THE FUTUR, THIS WOULD BE USEFULL TO BE ABLE TO SAVE ALL THE OBJECTS IN A FILE AND RESTORE THEM TO USE THEM
+		// HERE IS THE WAY TO DO IT
+		
+		// SAVE THE OBJECT ECAM
+		try {
+			FileOutputStream f = new FileOutputStream(new File("myObjects.txt"));
+			ObjectOutputStream o = new ObjectOutputStream(f);
+
+			// Write objects to file
+			o.writeObject(ecam);
+
+			o.close();
+			f.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+			
+		// LOAD THE OBJECT ECAM
+		try {
+			FileInputStream is = new FileInputStream("myObjects.txt");
+			ObjectInputStream ois = new ObjectInputStream(is);
+			School ECAM = (School) ois.readObject();
+			ois.close();
+			is.close();
+		} catch (ClassNotFoundException | IOException e) {
+			e.printStackTrace();
+		}	
+		
+		
 		
 		String courseCode="";
 		int options = 0;
@@ -38,9 +81,7 @@ public class mainclass {
 		System.out.println("--- Assessment Manager 2000 ---");
 		// GET PROFESSEUR NAME HERE
 		Teacher teacher =combe;
-		System.out.print("Bonjour professeur ");
-		System.out.println(teacher.name);
-		
+		System.out.println("Bonjour professeur !");
 		while (true)
 		{
 			//Course selection
@@ -114,6 +155,7 @@ public class mainclass {
 			System.out.println("Erreur : L'étudiant "+studID+" ne participe pas à ce cours.");
 			return 1;
 		}
+		// SAVE IN THE DATABASE
 	}
 	
 	public static int statistics_display(String courseCode , Scanner sc)

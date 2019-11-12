@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Assessment {
+public class Assessment implements Serializable {
 	public static float Result;
   private static String AcademicYear;
 

@@ -4,9 +4,9 @@ import java.util.List;
 //import java.util.Hashtable;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.Serializable;
 
-
-public class Course {
+public class Course implements Serializable {
 	public String name;
 	public String code;
 	public int creditNumber;

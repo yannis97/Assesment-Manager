@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.Serializable;
 
-
-public class Teacher{
+public class Teacher implements Serializable {
 	public String name;
 	public int ID_number;
 	private String passwd;

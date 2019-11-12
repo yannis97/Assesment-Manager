@@ -1,7 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.io.Serializable;
 
-public class School {
+public class School implements Serializable {
 	  public static String name;
 	  private static String address;	
 	  //private static Teacher ListTeacher[];

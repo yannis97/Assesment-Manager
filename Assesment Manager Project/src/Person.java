@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Person {
+public class Person implements Serializable {
 	public static String Lastname;
 	  private static String Firstname;	
 	  private static int Age = 0;
