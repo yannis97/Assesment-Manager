@@ -41,7 +41,7 @@ public class Course {
 	
 	public void addPoints(int year, int id, float points) {
 		if(!pointsDico.containsKey(year)) {
-			pointsDico.put(2019, new HashMap<Integer,Float>());
+			pointsDico.put(year, new HashMap<Integer,Float>());
 		}
 		pointsDico.get(year).put(id, points);
 	}

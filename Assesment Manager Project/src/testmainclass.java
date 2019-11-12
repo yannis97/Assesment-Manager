@@ -20,11 +20,18 @@ class testmainclass {
 	@Test
 	void testEncoder()
 	{
+		Teacher combe=new Teacher("Combefis", 115, "YOLO");
+		Course csharpCourse=new Course("Csharp","c#",5);
+		combe.addCourse(csharpCourse);
+		
+		Student Yan=new Student("Argyrakis","Yannis", 16133);
+		combe.addStudToCourse(Yan, "c#");
 		
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		InputStream is = loader.getResourceAsStream("encoder_data.txt");
 		Scanner in = new Scanner(is);
-		assertEquals(mainclass.encoder(0, in),0);
+		
+		assertEquals(mainclass.encoder(combe,"c#",in),0);
 		
 	}
 	
@@ -45,10 +52,10 @@ class testmainclass {
 		for (int i=0;i<options.length;i++){
 			Scanner in = new Scanner(options[i]);
 			if (options[i] == "9"){
-				assertEquals(mainclass.statistics_display(0, in),1);
+				assertEquals(mainclass.statistics_display("0", in),1);
 			}
 			else {
-				assertEquals(mainclass.statistics_display(0, in),2);
+				assertEquals(mainclass.statistics_display("0", in),2);
 			}	
 		}
 	}
