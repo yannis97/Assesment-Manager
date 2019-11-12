@@ -48,6 +48,17 @@ public class Teacher implements Serializable {
 		}
 	}
 	
+	public int displayStat(String courseCode,int option, int year) {
+		Course thisCourse=coursesDico.get(courseCode);
+		if(option==0) {
+			return thisCourse.displayGraph(year);
+		}else if(option==1) {
+			return thisCourse.displayHistogram(year);
+		}
+		return 2;	
+		
+	}
+	
 	public boolean checkPasswd(String passwd) {
 		return (this.passwd==passwd);
 	}
