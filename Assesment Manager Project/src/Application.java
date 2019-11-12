@@ -21,7 +21,7 @@ public class Application {
 		
 		
 		// Teacher object
-		Teacher Combe=new Teacher("Combefis");  
+		Teacher Combe=new Teacher("Combefis",14,"PWD");  
 		System.out.println(Combe.name);
 		// Teacher object list 
 		List<Teacher> myTeachers= new ArrayList<Teacher>();
