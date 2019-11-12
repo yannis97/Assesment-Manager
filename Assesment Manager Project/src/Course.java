@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 public class Course implements Serializable {
 
-public class Course {
 	public String name;
 	public String code;
 	public int creditNumber;
@@ -49,7 +48,7 @@ public class Course {
 			}
 			return 2; 
 		}else {
-			System.out.println("Aucun points n'ont ï¿½tï¿½ encodï¿½s pour cette annï¿½e.");
+			System.out.println("Aucun points n'ont été encodé pour cette année.");
 			return 1;
 		}
 	}
@@ -61,7 +60,7 @@ public class Course {
 			    frequencies[e.getValue()-1]++;
 
 			}
-			System.out.println("       \\  Frï¿½quence");
+			System.out.println("       \\  Fréquence");
 			System.out.println("Resultat\\");
 			int score=0;
 			for(int freq:frequencies) {
@@ -74,7 +73,7 @@ public class Course {
 			
 			return 2; 
 		}else {
-			System.out.println("Aucun points n'ont ï¿½tï¿½ encodï¿½s pour cette annï¿½e.");
+			System.out.println("Aucun points n'ont été encodés pour cette année.");
 			return 1;
 		}
 	}

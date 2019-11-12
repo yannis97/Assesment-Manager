@@ -171,44 +171,22 @@ public class mainclass {
 	public static int statistics_display(Teacher teach,String courseCode , Scanner sc)
 	{
 		int option = 0;
-		int local_state = 2;
 		System.out.println("--- Cours ID : " + courseCode + " ---"); // CHERCHE LE STRING DU COURS
 		System.out.println("Affichage (0 = Graphe élèves | 1 = Histogramme des points | 2 = Evolution moyenne par année | 9 = Retour)");
 		option = checkIntInput(sc);
-		System.out.println("Entrer l'année qui vous intéresse :");
+		if(option == 9)
+		{
+			return 1;
+		}
+		else if(option == 2)
+		{
+			System.out.println("Non disponible");
+			return 2;
+		}
+		System.out.println("Entrez l'année qui vous intéresse :");
+
 		int year = checkIntInput(sc);
 		return teach.displayStat(courseCode,option,year);
-		/*if(option == 0)
-		{
-			
-			System.out.println("*Graphe élève*");
-			teach.dis
-			local_state = 2;
-			return local_state;
-		}
-		else if (option == 1)
-		{
-			System.out.println("*Histogramme*");
-			local_state = 2;
-			return local_state;
-		}
-		else if (option == 2)
-		{
-			System.out.println("*Evolution Moyenne*");
-			local_state = 2;
-			return local_state;
-		}
-		else
-		{
-			if(option == 9)
-			{
-				local_state = 1;
-				return local_state;
-			}
-			System.out.println("Veuillez entrez une commande valide !");
-			local_state = 2;
-			return local_state;
-		}*/
 	}
 	public static int checkIntInput(Scanner sc){
 		int i = 0;
