@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.lang.*;
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,17 +8,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+
 public class mainclass {
 
 	public static void main(String[] args) {
 		
-		// SAVE IN THE DATABASE
-
-		
-		
 		Teacher combe=new Teacher("Combefis", 115, "YOLO");
 		Course pythonCourse=new Course("Python","py",5);
 		Course javaCourse=new Course("Java","ja",6);
+		
+
 		
 		combe.addCourse(pythonCourse);
 		combe.addCourse(javaCourse);
@@ -29,12 +26,22 @@ public class mainclass {
 		Student JuGo=new Student("Gorjon","Julien", 16119);
 		Student Yan=new Student("Argyrakis","Yannis", 16001);
 		
+		javaCourse.addPoints(2019, 16119, 16);
+		javaCourse.addPoints(2019, 16001, 15);
+		javaCourse.addPoints(2019, 16000, 10);
+		
+		pythonCourse.addPoints(2019, 16119, 14);
+		pythonCourse.addPoints(2019, 16001, 8);
+		pythonCourse.addPoints(2019, 16000, 18);
+		
 		combe.addStudToCourse(JuKi, "py");
 		combe.addStudToCourse(JuGo, "py");
 		combe.addStudToCourse(Yan, "py");
 		combe.addStudToCourse(JuKi, "ja");
 		combe.addStudToCourse(JuGo, "ja");
 		combe.addStudToCourse(Yan, "ja");
+		
+		
 		
 		School ecam=new School("Ecam","Promenade de l'Alma");
 		ecam.addTeacher(combe);
@@ -44,7 +51,7 @@ public class mainclass {
 		
 		
 		
-		// IN THE FUTUR, THIS WOULD BE USEFULL TO BE ABLE TO SAVE ALL THE OBJECTS IN A FILE AND RESTORE THEM TO USE THEM
+// IN THE FUTUR, THIS WOULD BE USEFULL TO BE ABLE TO SAVE ALL THE OBJECTS IN A FILE AND RESTORE THEM TO USE THEM
 		// HERE IS THE WAY TO DO IT
 		
 		// SAVE THE OBJECT ECAM
@@ -71,6 +78,10 @@ public class mainclass {
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}	
+		
+		
+		
+		
 		
 		
 		
@@ -124,7 +135,7 @@ public class mainclass {
 					state = 1;
 				}
 				else if(options == 1){
-					state = statistics_display(courseCode,sc);
+					state = statistics_display(teacher,courseCode,sc);
 					// Stats et affichage // at the end -> histogramme or graph
 				}
 				else { state = 0;} //Retour au menu du cours
@@ -147,7 +158,7 @@ public class mainclass {
 		if (points > 20) {
 			points = 20;
 		}
-		// GET OBJECT STUDENT AND SET INFORMATIONS HERE !
+	
 		if(teach.encodePoints(courseCode, year, studID, points)==0) {
 			System.out.println(studID + " - " + points + "/20 " + " - " + year + " - enregistré avec succès !");
 			return 0;
@@ -155,10 +166,9 @@ public class mainclass {
 			System.out.println("Erreur : L'étudiant "+studID+" ne participe pas à ce cours.");
 			return 1;
 		}
-		// SAVE IN THE DATABASE
 	}
 	
-	public static int statistics_display(String courseCode , Scanner sc)
+	public static int statistics_display(Teacher teach,String courseCode , Scanner sc)
 	{
 		int option = 0;
 		int year = 0;
@@ -166,10 +176,18 @@ public class mainclass {
 		System.out.println("--- Cours ID : " + courseCode + " ---"); // CHERCHE LE STRING DU COURS
 		System.out.println("Affichage (0 = Graphe élèves | 1 = Histogramme des points | 2 = Evolution moyenne par année | 9 = Retour)");
 		option = checkIntInput(sc);
-		if(option == 0)
+		System.out.println("Entrer l'année qui vous intéresse :");
+		int year = checkIntInput(sc);
+		return teach.displayStat(courseCode,option,year);
+		/*if(option == 0)
 		{
 			
+<<<<<<< HEAD
 			System.out.println("Veuillez entrez l'année académique :");
+=======
+			System.out.println("*Graphe élève*");
+			teach.dis
+>>>>>>> 0c4344564fd75595a683a5d0fd91b056a36e181c
 			local_state = 2;
 			return local_state;
 		}
@@ -195,7 +213,7 @@ public class mainclass {
 			System.out.println("Veuillez entrez une commande valide !");
 			local_state = 2;
 			return local_state;
-		}
+		}*/
 	}
 	public static int checkIntInput(Scanner sc){
 		int i = 0;
