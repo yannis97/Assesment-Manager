@@ -11,10 +11,10 @@ public class Course {
 	public String code;
 	public int creditNumber;
 	public List<Student> studentList;
-	Map<Integer,Student> studentDico;
+	public Map<Integer,Student> studentDico;
 	//Dictionary<Integer, Dictionary> years_points_dico = new Hashtable<Integer, Dictionary>();
 	//Dictionary<Integer, Float> points2019_dico = new Hashtable<Integer, Float>();
-	Map<Integer,HashMap<Integer,Float>>pointsDico;
+	public Map<Integer,HashMap<Integer,Float>>pointsDico;
 
 	
 	public Course(String courseName,String courseCode,int creditNumber) {

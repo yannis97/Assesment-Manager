@@ -11,18 +11,24 @@ public class mainclass {
 		combe.addCourse(pythonCourse);
 		combe.addCourse(javaCourse);
 		
-		Student Juki=new Student("Kirstein","Julien", 16000);
+		Student JuKi=new Student("Kirstein","Julien", 16000);
 		Student JuGo=new Student("Gorjon","Julien", 16119);
 		Student Yan=new Student("Argyrakis","Yannis", 16001);
 		
-		combe.addStudToCourse(Juki, "py");
+		combe.addStudToCourse(JuKi, "py");
 		combe.addStudToCourse(JuGo, "py");
 		combe.addStudToCourse(Yan, "py");
-		combe.addStudToCourse(Juki, "ja");
+		combe.addStudToCourse(JuKi, "ja");
 		combe.addStudToCourse(JuGo, "ja");
 		combe.addStudToCourse(Yan, "ja");
 		
-		combe.displayCourses();
+		School ecam=new School("Ecam","Promenade de l'Alma");
+		ecam.addTeacher(combe);
+		ecam.addStudent(JuKi);
+		ecam.addStudent(JuGo);
+		ecam.addStudent(Yan);
+		
+		
 		
 		
 		String courseCode="";
@@ -38,11 +44,11 @@ public class mainclass {
 			//Course selection
 			while(state == 0)
 			{
-				System.out.println("Sélectionnez le cours qui vous intéresse :");
+				System.out.println("Entrez le code du cours qui vous intéresse :");
 				teacher.displayCourses();
 				String codeInput=sc.nextLine();
 				if(!teacher.checkCourseCode(codeInput)) {
-					System.out.println("Erreur, veuillez entrez un cours valide !");
+					System.out.println("Erreur, veuillez entrez un code valide !");
 				}else{
 					state = 1;
 					courseCode=codeInput;
