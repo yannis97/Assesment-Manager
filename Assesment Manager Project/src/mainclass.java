@@ -38,7 +38,9 @@ public class mainclass {
 		System.out.println("--- Assessment Manager 2000 ---");
 		// GET PROFESSEUR NAME HERE
 		Teacher teacher =combe;
-		System.out.println("Bonjour professeur !");
+		System.out.print("Bonjour professeur ");
+		System.out.println(teacher.name);
+		
 		while (true)
 		{
 			//Course selection
