@@ -44,7 +44,7 @@ public class Teacher{
 	
 	public void displayCourses() {
 		for (Map.Entry<String,Course> e : coursesDico.entrySet()){
-		    System.out.println(e.getKey()+" : "+e.getValue().name);
+		    System.out.print(e.getKey()+" = "+e.getValue().name + " | ");
 		}
 	}
 	

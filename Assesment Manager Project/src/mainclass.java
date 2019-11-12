@@ -44,8 +44,9 @@ public class mainclass {
 			//Course selection
 			while(state == 0)
 			{
-				System.out.println("Entrez le code du cours qui vous intéresse :");
+				System.out.print("Entrez le code du cours qui vous intéresse : | ");
 				teacher.displayCourses();
+				System.out.println("");
 				String codeInput=sc.nextLine();
 				if(!teacher.checkCourseCode(codeInput)) {
 					System.out.println("Erreur, veuillez entrez un code valide !");
