@@ -60,8 +60,8 @@ public class Course implements Serializable {
 			    frequencies[e.getValue()-1]++;
 
 			}
-			System.out.println("       \\  Fréquence");
-			System.out.println("Resultat\\");
+			System.out.println("Résultat  \\  Fréquence");
+
 			int score=0;
 			for(int freq:frequencies) {
 				if(score<10)System.out.print(' ');  // align with two digit numbers
